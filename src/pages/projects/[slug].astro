@@ -3,15 +3,14 @@ import { getEntry, getCollection } from "astro:content";
 import ProjectLayout from "@layouts/ProjectLayout.astro";
 import { markdownComponents } from "./markdownComponents.tsx";
 
+const allProjects = await getCollection("projects");
+
 const { slug } = Astro.params;
 
-const project = await getEntry<"projects", `${string}.md`>({
-  collection: "projects",
-  id: `${slug}.md`,
-});
+const project = allProjects.find((p) => p.id === `${slug}.md`);
 
 if (!project) {
-  throw new Error(`Project not found for slug: ${slug}`);
+  throw new Error(`❌ Project not found for slug: ${slug}.md`);
 }
 
 const { name, summary, githublink, techstack, image } = project.data;
