@@ -1,0 +1,27 @@
+---
+type Props = {
+  socialLinks: { text: string; href: string; icon: any }[];
+};
+
+const { socialLinks } = Astro.props;
+---
+
+<div class="fixed bottom-0 left-10 z-10 hidden flex-col items-center text-white md:flex">
+  <ul class="flex flex-col items-center space-y-1">
+    {socialLinks.map(({ text, href, icon: Icon }) => (
+      <li>
+        <a
+          href={href}
+          aria-label={text}
+          target="_blank"
+          rel="noreferrer"
+          class="p-2 text-white hover:text-[#ADD8E6] transition-transform duration-200 ease-in-out hover:-translate-y-1"
+        >
+          <Icon class="w-5.5 h-5.5 transition-transform duration-200 hover:-translate-y-1" />
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="mt-2 h-24 w-px bg-[#ADD8E6]"></div>
+</div>
+

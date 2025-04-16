@@ -55,3 +55,31 @@
   display: none !important;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-white text-4xl font-serif font-bold mb-4;
+  }
+  h2 {
+    @apply text-primary text-2xl font-serif mb-3;
+  }
+  h3 {
+    @apply text-white text-xl font-serif mb-2;
+  }
+  p {
+    @apply text-base text-neutral mb-3;
+  }
+  li {
+    @apply relative mb-2 pl-8 text-base text-neutral;
+  }
+  li::before {
+    content: url('/check.svg');
+    @apply absolute top-1 left-0;
+  }
+  a {
+    @apply text-blue-400 hover:underline;
+  }
+}

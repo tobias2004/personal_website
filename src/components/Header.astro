@@ -40,7 +40,7 @@ const { siteLogo, navLinks } = Astro.props;
         navLinks.map((link) => (
           <li class="relative">
             <a
-              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
+              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500`}
               href={link.href}
             >
               {link.text}
@@ -53,7 +53,6 @@ const { siteLogo, navLinks } = Astro.props;
 </header>
 
 <script>
-  // Toggle mobile menu
   const button = document.querySelector("#menu-button");
   const menu = document.querySelector("#main-menu");
   const navItems = document.querySelectorAll("#main-menu > ul > li > a");
@@ -69,29 +68,35 @@ const { siteLogo, navLinks } = Astro.props;
     item?.addEventListener("click", toggleMenu);
   });
 
-  // Update navigation based on scroll position with Intersection Observer
+  // Update navigation style on scroll for sm+ screens only
   const observer = new IntersectionObserver(
     (entries) => {
+      if (window.innerWidth < 640) return; // skip mobile
+
       entries.forEach((entry) => {
+        const targetId = `#${entry.target.id}`;
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
+            const href = item.getAttribute("href");
+            if (href === targetId) {
+              item.classList.add("text-white", "after:opacity-100");
             } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
+              item.classList.remove("text-white", "after:opacity-100");
             }
           });
         }
       });
     },
-    { threshold: 0.5 },
+    {
+      threshold: 0.25,
+      rootMargin: "-20% 0px -20% 0px",
+    }
   );
 
   document.querySelectorAll("section").forEach((section) => {
     observer.observe(section);
   });
 
-  // Cleanup observer
   document.onvisibilitychange = () => {
     if (document.visibilityState === "hidden") {
       observer.disconnect();

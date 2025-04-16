@@ -1,5 +1,4 @@
 ---
-import Header from "@components/Header.astro";
 import "@fontsource/be-vietnam-pro";
 import "@fontsource-variable/gabarito";
 import { SITE_CONFIG } from "@config";
@@ -10,8 +9,6 @@ import Footer from "@components/Footer.astro";
 const {
   title,
   description,
-  siteLogo,
-  navLinks,
   lang,
   author,
   socialLinks,
@@ -40,10 +37,8 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta property="og:image" content={ogImgUrl} />
   </head>
   <body class="bg-black font-sans">
-    <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <Email email={email}/>
-    <Socials socialLinks={socialLinks}/>
     <main class="mx-auto max-w-3xl px-5">
+      <a href="/" class="text-sm text-blue-400 hover:underline mb-6 inline-block">← Go Back</a>
       <slot />
     </main>
     <Footer author={author} />

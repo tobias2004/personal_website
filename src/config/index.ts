@@ -1,97 +1,79 @@
 import type { SiteConfig, SiteContent } from "../types";
+import GitHub from "@components/icons/GitHub.astro";
+import LinkedIn from "@components/icons/LinkedIn.astro";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Tobias Kohn",
+  author: "Tobias Kohn",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Explore the personal site of Tobias Kohn, CS student and developer. Learn about my projects, download my resume, and connect.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/self.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "Github", href: "https://github.com/tobias2004", icon: GitHub },
+    { text: "LinkedIn", href: "https://linkedin.com/in/tobiaskohn", icon: LinkedIn },
   ],
   socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  canonicalURL: "tobikohn.com",
+  email: "me@tobikohn.com",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Tobias Kohn",
+    specialty: "Undergraduate Student",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "I am Computer Science at Oregon State University in Corvallis, OR. I'm in love with Data Science, Machine Learning, and Artificial Intelligence.",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Vanderbilt University Medical Center",
+      position: "Incoming Health Informatics Intern",
+      startDate: "May 2025",
+      endDate: "Aug 2025",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Participant of the Vanderbilt Biomedical Informatics Summer Program.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "SHARE Lab - Oregon State University",
+      position: "Data Science Research Assistant",
+      startDate: "Jan 2025",
+      endDate: "Jun 2025",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Processed data from 50 in-home sensors across 100+ homes with Pandas and NumPy to support research on detecting cognitive decline in older adults",
+        "Engineered features from raw time-series data, analyzing inactivity and movement patterns within the home.",
+        "Applied machine learning approaches with scikit-learn to predict the presence of amyloid plaques in subjects' brains.",
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
-    },
-  ],
-  projects: [
-    {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
-    },
-    {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
-    },
-    {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
-    },
+      company: "Oregon State University",
+      position: "Undergraduate Teaching Assistant",
+      startDate: "Sep 2024",
+      endDate: "Jun 2025",
+      summary: [
+        "Managed and directed 2 labs with 25 students each week.",
+        "Instructed a total of 100 students on Python and C++ programming fundamentals, breaking down complex concepts into simple ideas to enhance comprehension.",
+        "Provided guidance on coding assignments, strategies, and problem-solving techniques to reinforce students' understanding.",
+      ],
+  },
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      Hi, I’m Tobias Kohn, a computer science student, data science researcher, and machine learning enthusiast studying at Oregon State University.\n
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      I am passionate about developing robust, user and developer-friendly appications by integrating technical expertise with my soft-skills of leadership, public speaking, and relationship-building.\n
+
+      Currently, I'm working to enhance my shell personal project by combining my background in machine learning with my interest in computational mathematics. I'm developing a custom Linear Algebra library in C.\n
+
+      When I'm not coding or researching, I enjoy playing soccer, hiking the outdoors, trying out new cooking recepies, and spending quality time with my friends and family.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/self.jpg",
   },
 };
 
