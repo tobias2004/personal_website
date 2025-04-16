@@ -1,6 +1,6 @@
 import type { SiteConfig, SiteContent } from "../types";
-import GitHub from "@components/icons/Github.astro";
-import LinkedIn from "@components/icons/Linkedin.astro";
+import GitHub from "@components/Icons/github.astro";
+import LinkedIn from "@components/Icons/linkedin.astro";
 
 export const SITE_CONFIG: SiteConfig = {
   title: "Tobias Kohn",
